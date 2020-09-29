@@ -3,8 +3,18 @@ Classifying observed objects from the Kepler mission with scikit-learn.
 
  The NASA Exoplanet Science Institute keeps an archive of observed objects from the Kepler Mission that may possibly be habitable planets. This dataset contains 9564 observations from this archive, with various characteristics and a label to classify them. The classification, named koi_disposition, sorts each observations into one of three classes: candidate, confirmed, and false positive. Using this dataset, we will train a model to predict the disposition class of each observation based on its features.
  
- Data source: [NASA](https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=koi)
- 
+Data source: [NASA](https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=koi)
+
+[Data dictionary](https://exoplanetarchive.ipac.caltech.edu/docs/API_kepcandidate_columns.html)
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+df = pd.read_csv(r"C:\Users\austi\Downloads\cumulative_2020.09.17_20.18.06.csv")
+```
+
 ## Data Preprocessing
 Drop error and additional identification features.
 ```python 
